@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yashii | Shayari World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>Yashii <span>♡</span></h1>
+        <p>My Little World of Shayari</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#love">Love</a>
+            <a href="#sad">Sad</a>
+            <a href="#friendship">Friendship</a>
+            <a href="#alone">Alone</a>
+            <a href="#life">Life</a>
+            <a href="saved.html">My Saved</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- WELCOME SECTION -->
+    <section class="welcome">
+        <h2>Welcome to My Shayari World ✨</h2>
+        <p>
+            Some feelings are too deep for words...
+            Let poetry speak your heart. ❤️
+        </p>
+    </section>
+
+    <!-- SEARCH -->
+    <section class="search-section">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search your favourite Shayari..."
+            onkeyup="searchShayari()"
+        >
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="category-filter">
+        <button onclick="filterShayari('all')">All</button>
+        <button onclick="filterShayari('love')">❤️ Love</button>
+        <button onclick="filterShayari('sad')">🥀 Sad</button>
+        <button onclick="filterShayari('friendship')">👭 Friendship</button>
+        <button onclick="filterShayari('alone')">🌙 Alone</button>
+        <button onclick="filterShayari('life')">🌸 Life</button>
+    </section>
+
+    <!-- SHAYARI SECTION -->
+    <main class="shayari-container">
+
+        <!-- LOVE -->
+        <div class="shayari-card" id="love">
+            <h3>❤️ Love Shayari</h3>
+            <p class="shayari-text">
+                तेरी मुस्कान में कुछ खास बात है,
+                मेरे हर सवाल का तू ही जवाब है।
+                दूर होकर भी तू पास लगता है,
+                शायद इसी का नाम प्यार है।
+            </p>
+
+            <div class="actions">
+                <button onclick="likeShayari(this)">❤️ Like</button>
+                <button onclick="saveShayari(this)">♡ Save</button>
+                <button onclick="showComment(this)">💬 Comment</button>
+            </div>
+
+            <div class="comment-box" style="display:none;">
+                <input type="text" placeholder="Write your comment...">
+                <button onclick="postComment(this)">Post</button>
+            </div>
+            <div class="comments"></div>
+        </div>
+
+        <!-- SAD -->
+        <div class="shayari-card" id="sad">
+            <h3>🥀 Sad Shayari</h3>
+            <p class="shayari-text">
+                कभी कभी खामोशी भी बहुत कुछ कह जाती है,
+                आँखों में छुपी बातें नज़र आ जाती हैं।
+                मुस्कुराते चेहरे के पीछे,
+                कई अधूरी कहानियाँ रह जाती हैं।
+            </p>
+
+            <div class="actions">
+                <button onclick="likeShayari(this)">❤️ Like</button>
+                <button onclick="saveShayari(this)">♡ Save</button>
+                <button onclick="showComment(this)">💬 Comment</button>
+            </div>
+
+            <div class="comment-box" style="display:none;">
+                <input type="text" placeholder="Write your comment...">
+                <button onclick="postComment(this)">Post</button>
+            </div>
+            <div class="comments"></div>
+        </div>
+
+        <!-- FRIENDSHIP -->
+        <div class="shayari-card" id="friendship">
+            <h3>👭 Friendship Shayari</h3>
+            <p class="shayari-text">
+                दोस्ती सिर्फ साथ चलने का नाम नहीं,
+                हर मुश्किल में साथ निभाने का नाम है।
+                कुछ रिश्ते दिल से बनते हैं,
+                और वही जिंदगी की सबसे खूबसूरत पहचान हैं।
+            </p>
+
+            <div class="actions">
+                <button onclick="likeShayari(this)">❤️ Like</button>
+                <button onclick="saveShayari(this)">♡ Save</button>
+                <button onclick="showComment(this)">💬 Comment</button>
+            </div>
+
+            <div class="comment-box" style="display:none;">
+                <input type="text" placeholder="Write your comment...">
+                <button onclick="postComment(this)">Post</button>
+            </div>
+            <div class="comments"></div>
+        </div>
+
+        <!-- ALONE -->
+        <div class="shayari-card" id="alone">
+            <h3>🌙 Alone Shayari</h3>
+            <p class="shayari-text">
+                अकेले चलना अब आदत सी बन गई है,
+                खामोशी मेरी साथी बन गई है।
+                किसी से कोई शिकायत नहीं,
+                बस खुद से मिलने की चाहत रह गई है।
+            </p>
+
+            <div class="actions">
+                <button onclick="likeShayari(this)">❤️ Like</button>
+                <button onclick="saveShayari(this)">♡ Save</button>
+                <button onclick="showComment(this)">💬 Comment</button>
+            </div>
+
+            <div class="comment-box" style="display:none;">
+                <input type="text" placeholder="Write your comment...">
+                <button onclick="postComment(this)">Post</button>
+            </div>
+            <div class="comments"></div>
+        </div>
+
+        <!-- LIFE -->
+        <div class="shayari-card" id="life">
+            <h3>🌸 Life Shayari</h3>
+            <p class="shayari-text">
+                जिंदगी हर दिन नया सबक सिखाती है,
+                कभी हँसाती है तो कभी रुलाती है।
+                जो हर हाल में मुस्कुराना सीख जाए,
+                जिंदगी उसी के लिए खूबसूरत बन जाती है।
+            </p>
+
+            <div class="actions">
+                <button onclick="likeShayari(this)">❤️ Like</button>
+                <button onclick="saveShayari(this)">♡ Save</button>
+                <button onclick="showComment(this)">💬 Comment</button>
+            </div>
+
+            <div class="comment-box" style="display:none;">
+                <input type="text" placeholder="Write your comment...">
+                <button onclick="postComment(this)">Post</button>
+            </div>
+            <div class="comments"></div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Yashii ♡</h3>
+        <p>Made with Love ❤️</p>
+        <p>Every feeling deserves a beautiful word.</p>
+        <p>© 2026 Yashii Shayari World</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
